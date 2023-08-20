@@ -1,6 +1,6 @@
 {
   "name": "@gr-system-design/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -77,5 +77,14 @@
     "tslib": "^2.6.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
+  },
+  "gitHead": "a1776ebf3721c17869d3779f4c57aea8f12b11af",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "url": "https://github.com/Crhis35/gr-system-design.git",
+    "directory": "packages/core",
+    "type": "git"
   }
 }
