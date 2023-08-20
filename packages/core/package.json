@@ -1,6 +1,6 @@
 {
-  "name": "@gr-system-design/core",
-  "version": "0.0.6",
+  "name": "@growth-system-design/core",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

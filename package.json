@@ -1,5 +1,5 @@
 {
-  "name": "@gr-system-design/root",
+  "name": "@growth-system-design/root",
   "version": "0.0.1",
   "private": true,
   "workspaces": [
@@ -13,7 +13,6 @@
     "commit": "yarn git-cz",
     "test:chromatic": "yarn lerna run test:chromatic",
     "build:storybook": "yarn build && yarn lerna run build-storybook",
-    "prepare": "husky install",
     "clean": "lerna run clean",
     "publish:prod": "lerna publish from-package --contents dist --force-publish"
   },
