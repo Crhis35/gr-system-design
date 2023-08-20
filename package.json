@@ -1,0 +1,28 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn lerna run build",
+    "dev": "yarn lerna run dev",
+    "test": "yarn lerna run test",
+    "publish": "yarn test && yarn build && yarn lerna publish",
+    "commit": "yarn git-cz",
+    "test:chromatic": "yarn lerna run test:chromatic",
+    "build:storybook": "yarn build && yarn lerna run build-storybook",
+    "prepare": "husky install",
+    "clean": "lerna run clean",
+    "publish:prod": "lerna publish from-package --contents dist --force-publish"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.1.5",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.0"
+  }
+}
