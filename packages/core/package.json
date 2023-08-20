@@ -1,6 +1,6 @@
 {
   "name": "@gr-system-design/core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -78,7 +78,7 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
-  "gitHead": "8bc4147b42d8407779f262017d40bd8d50b4c300",
+  "gitHead": "25f8bbf7f631e0a59b873a918be02257349db3a2",
   "publishConfig": {
     "access": "public"
   },
