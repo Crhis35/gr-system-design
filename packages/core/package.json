@@ -78,7 +78,7 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
-  "gitHead": "6c4f8e082f25917c9ef4e8981e0b4ba1f9b370b1",
+  "gitHead": "d7cdd3a5979f692157c31e8b30396b8a95f40f5f",
   "publishConfig": {
     "access": "public"
   },
