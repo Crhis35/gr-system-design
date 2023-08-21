@@ -1,6 +1,6 @@
 {
-  "name": "@growth-system-design/core",
-  "version": "0.0.3",
+  "name": "@crhis/growth-system-design",
+  "version": "0.0.4",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -78,7 +78,7 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
-  "gitHead": "b052ed60973b206c911519d1c78e7e07d18daad6",
+  "gitHead": "339cff6e5aeb5fa14ccce6deba921b498949b432",
   "publishConfig": {
     "access": "public"
   },
