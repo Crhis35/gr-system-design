@@ -29,6 +29,7 @@ export default function Stack(props: PropsWithChildren<Partial<StackProps>>) {
     height,
     center,
     as: Component = 'div',
+    component: Wrapper = React.Fragment,
   } = props;
 
   const stackClasses = clsx(
@@ -54,12 +55,12 @@ export default function Stack(props: PropsWithChildren<Partial<StackProps>>) {
     ml && `ml-${ml}`,
     width && `w-${width}`,
     height && `h-${height}`,
-    center && `items-center justify-center`
+    center && `items-center justify-center`,
   );
   return (
     <Component className={stackClasses}>
       {React.Children.map(children, (child, index) => (
-        <div
+        <Wrapper
           key={index}
           className={`${
             direction === 'column' || direction === 'column-reverse'
@@ -68,7 +69,7 @@ export default function Stack(props: PropsWithChildren<Partial<StackProps>>) {
           }-${spacing}`}
         >
           {child}
-        </div>
+        </Wrapper>
       ))}
     </Component>
   );

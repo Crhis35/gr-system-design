@@ -1,6 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import type { Meta, StoryFn } from '@storybook/react';
+import { Button } from 'flowbite-react';
 
 import Stack from './stack';
+import { StackProps } from './stack.model';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -12,6 +15,7 @@ const meta = {
   argTypes: {
     spacing: {
       description: 'Select Based on The Following Options',
+      control: 'number',
     },
     as: {
       description: 'Component to be wrapped by the component',
@@ -23,13 +27,22 @@ const meta = {
 } satisfies Meta<typeof Stack>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
-  args: {
-    spacing: 4,
-    children: 'hello world',
-    as: 'div',
-  },
+const Template: StoryFn<StackProps> = (args) => (
+  <Stack {...args}>
+    {Array.from({ length: 12 }).map((_, index) => (
+      <div key={index}>
+        <Button label="hi" />
+      </div>
+    ))}
+  </Stack>
+);
+export const Default = Template.bind({});
+
+Default.args = {
+  as: 'div',
+  width: 100,
+  justifyContent: 'space-between',
+  direction: 'column',
+  height: 40,
 };

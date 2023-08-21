@@ -6,6 +6,7 @@ import {
 } from 'lib/types/theme';
 export interface StackProps {
   as?: React.ElementType;
+  component?: React.ElementType;
   spacing: SpacingType;
   align: AlignItemsType;
   direction: FlexDirectionType;

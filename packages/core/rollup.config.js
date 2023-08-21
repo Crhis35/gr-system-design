@@ -7,6 +7,17 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 import packageJson from './package.json' assert { type: 'json' };
 
+const moduleName = packageJson.name.replace(/^@.*\//, '');
+const author = packageJson.author;
+const banner = `
+  /**
+   * @license
+   * author: ${author}
+   * ${moduleName}.js v${packageJson.version}
+   * Released under the ${packageJson.license} license.
+   */
+`;
+
 export default [
   {
     input: 'src/index.ts',
@@ -16,15 +27,20 @@ export default [
         file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
+        banner,
       },
       {
         file: packageJson.module,
         format: 'esm',
         sourcemap: true,
+        banner,
       },
     ],
     plugins: [
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        exclude: ['**/__tests__', '**/*.test.ts'],
+      }),
       peerDepsExternal(),
       resolve(),
       commonjs(),
