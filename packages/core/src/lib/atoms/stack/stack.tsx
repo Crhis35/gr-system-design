@@ -1,10 +1,12 @@
-import React, { PropsWithChildren } from 'react';
+import React, { ElementType } from 'react';
 
 import clsx from 'clsx';
 
 import { StackProps } from './stack.model';
 
-export default function Stack(props: PropsWithChildren<Partial<StackProps>>) {
+export default function Stack<C extends ElementType = 'div'>(
+  props: StackProps<C>,
+) {
   const {
     spacing = '4',
     align = 'flex-start',
@@ -28,14 +30,18 @@ export default function Stack(props: PropsWithChildren<Partial<StackProps>>) {
     width,
     height,
     center,
-    as: Component = 'div',
+    as,
     component: Wrapper,
+
+    ...rest
   } = props;
+
+  const Component = as || 'div';
 
   const stackClasses = clsx(
     'flex',
-    `space-${direction === 'row' ? 'y' : 'x'}-${spacing}`,
-    align && `items-${align.replace('flex-', '')}`,
+    `space-${direction === 'row' ? 'x' : 'y'}-${spacing}`,
+    align && `items-${String(align).replace('flex-', '')}`,
     `flex-${direction.replace('column', 'col')}`,
     justifyContent &&
       `justify-${justifyContent.replace('space-', '').replace('flex-', '')}`,
@@ -57,25 +63,11 @@ export default function Stack(props: PropsWithChildren<Partial<StackProps>>) {
     height && `h-${height}`,
     center && `items-center justify-center`,
   );
+
   return (
-    <Component className={stackClasses}>
+    <Component className={stackClasses} {...rest}>
       {React.Children.map(children, (child, index) =>
-        Wrapper ? (
-          <Wrapper
-            key={index}
-            className={clsx(
-              `${
-                direction === 'column' || direction === 'column-reverse'
-                  ? 'mb'
-                  : 'mr'
-              }-${spacing}`,
-            )}
-          >
-            {child}
-          </Wrapper>
-        ) : (
-          { child }
-        ),
+        Wrapper ? <Wrapper key={index}>{child}</Wrapper> : <>{child}</>,
       )}
     </Component>
   );
