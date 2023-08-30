@@ -1,9 +1,12 @@
+import { defineConfig } from 'rollup';
+
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import tsConfigPaths from 'rollup-plugin-tsconfig-paths';
 
 import packageJson from './package.json' assert { type: 'json' };
 
@@ -12,16 +15,16 @@ const author = packageJson.author;
 const banner = `
   /**
    * @license
-   * author: ${author}
+   * author: ${author.name}
    * ${moduleName}.js v${packageJson.version}
    * Released under the ${packageJson.license} license.
    */
 `;
 
-export default [
+export default defineConfig([
   {
     input: 'src/index.ts',
-    external: ['react-dom'],
+    external: ['react-dom', 'flowbite', 'flowbite-react', 'csstype'],
     output: [
       {
         file: packageJson.main,
@@ -37,6 +40,7 @@ export default [
       },
     ],
     plugins: [
+      tsConfigPaths(),
       typescript({
         tsconfig: './tsconfig.json',
         exclude: ['**/__tests__', '**/*.test.ts'],
@@ -53,4 +57,4 @@ export default [
     plugins: [dts.default()],
     external: [/\.css$/],
   },
-];
+]);
