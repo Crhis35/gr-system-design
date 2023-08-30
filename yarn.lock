@@ -10546,6 +10546,13 @@ rollup-plugin-peer-deps-external@^2.2.4:
   resolved "https://registry.yarnpkg.com/rollup-plugin-peer-deps-external/-/rollup-plugin-peer-deps-external-2.2.4.tgz#8a420bbfd6dccc30aeb68c9bf57011f2f109570d"
   integrity sha512-AWdukIM1+k5JDdAqV/Cxd+nejvno2FVLVeZ74NKggm3Q5s9cbbcOgUPGdbxPi4BXu7xGaZ8HG12F+thImYu/0g==
 
+rollup-plugin-tsconfig-paths@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-tsconfig-paths/-/rollup-plugin-tsconfig-paths-1.5.1.tgz#96a01ed35d3175af1069b6d9d4cd68df9d4bed2a"
+  integrity sha512-HhqSvheeEdSQY/X1gMj7MBccx9BE4FbzIaCrRpOqNc9OwvbqbTf1WOUY56bGW4nJ3OWLOuzaBFJFle9LeRmXIg==
+  dependencies:
+    typescript-paths "^1.5.1"
+
 "rollup@^2.25.0 || ^3.3.0", rollup@^3.27.1:
   version "3.28.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.28.0.tgz#a3c70004b01934760c0cb8df717c7a1d932389a2"
@@ -11482,6 +11489,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
+
+typescript-paths@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/typescript-paths/-/typescript-paths-1.5.1.tgz#975cf5883915b24f9287315a8fa70b3b3451e32e"
+  integrity sha512-lYErSLCON2MSplVV5V/LBgD4UNjMgY3guATdFCZY2q1Nr6OZEu4q6zX/rYMsG1TaWqqQSszg6C9EU7AGWMDrIw==
 
 "typescript@>=3 < 6", "typescript@^4.6.4 || ^5.0.0", typescript@^5.1.6:
   version "5.1.6"
