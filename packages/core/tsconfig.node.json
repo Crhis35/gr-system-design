@@ -6,9 +6,6 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    "paths": {
-      "types/*": ["./lib/types/*"]
-    },
     "typeRoots": ["src/lib/types", "./node_modules/@types"]
   },
   "include": ["vite.config.ts"]

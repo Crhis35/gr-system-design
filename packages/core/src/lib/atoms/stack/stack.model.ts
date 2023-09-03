@@ -6,7 +6,7 @@ import {
   JustifyContentType,
   SizeType,
   PolymorphicComponentPropWithRef,
-} from 'lib/types/theme';
+} from '../../types/theme';
 
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
