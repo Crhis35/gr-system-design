@@ -54,13 +54,14 @@ export default function Stack<C extends ElementType = 'div'>(
     'outline-0',
     'border',
 
+    'dark:bg-gray-700',
+
     !error && !success && 'bg-gray-50',
     !error && !success && 'border-gray-300',
     !error && !success && 'text-gray-900',
 
     !error && !success && 'focus:border-primary-30',
 
-    !error && !success && 'dark:bg-gray-700',
     !error && !success && 'dark:border-gray-30',
     !error && !success && 'dark:text-gray-400',
 
@@ -157,7 +158,6 @@ export default function Stack<C extends ElementType = 'div'>(
           {label}
         </label>
       )}
-
       <div className='relative'>
         <div className={iconClasses}>{Icon && <Icon />}</div>
 
@@ -182,13 +182,12 @@ export default function Stack<C extends ElementType = 'div'>(
           {...rest}
         />
       </div>
-
+      test
       {HelperText && !errorMessage && (
         <p id='helper-text-explanation' className={helperTextClasses}>
           <HelperText />
         </p>
       )}
-
       {error && (
         <p
           id='helper-text-explanation'
