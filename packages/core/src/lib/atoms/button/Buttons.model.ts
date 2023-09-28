@@ -15,11 +15,13 @@ export type StackProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<
     C,
     {
+
       label?: string; 
       bgColor?: string; 
       txtColor?: string; 
       iconRight?: React.ReactNode;
       iconLeft?: React.ReactNode;
+      Social?:string,
       component?: React.ElementType;
       spacing?: SpacingType;
       align?: AlignItemsType;
