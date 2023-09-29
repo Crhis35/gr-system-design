@@ -3,7 +3,7 @@ import {
   SpacingType,
   SizeType,
   PolymorphicComponentPropWithRef,
-} from 'lib/types/theme';
+} from '../../types/theme';
 
 type InputSizes = 'small' | 'regular' | 'large';
 
@@ -23,6 +23,7 @@ export type InputProps<C extends React.ElementType> =
 
       label?: string;
       name?: string;
+      type?: React.HTMLInputTypeAttribute;
 
       error?: boolean;
       errorMessage?: boolean;

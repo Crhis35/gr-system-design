@@ -1,14 +1,12 @@
 import React from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
-import { Button } from 'flowbite-react';
-
-import Stack from './stack';
-import { StackProps } from './stack.model';
+import Input from './input';
+import { InputProps } from './input.model';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Atoms/Stack',
-  component: Stack,
+  title: 'Atoms/Input',
+  component: Input,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -23,26 +21,37 @@ const meta = {
     children: {
       description: 'Children component',
     },
+    success: {
+      description: 'Success variant',
+      control: 'boolean',
+    },
+    error: {
+      description: 'Error variant',
+      control: 'boolean',
+    },
   },
-} satisfies Meta<typeof Stack>;
+} satisfies Meta<typeof Input>;
 
 export default meta;
 
-const Template: StoryFn<StackProps> = args => (
-  <Stack {...args}>
-    {Array.from({ length: 12 }).map((_, index) => (
-      <div key={index}>
-        <Button label="hi" />
-      </div>
-    ))}
-  </Stack>
+const Template: StoryFn<InputProps> = args => (
+  <div>
+    <Input {...args} />
+  </div>
 );
 export const Default = Template.bind({});
+export const Success = Template.bind({});
 
 Default.args = {
-  as: 'div',
-  width: 100,
-  justifyContent: 'space-between',
-  direction: 'column',
-  height: 40,
+  label: 'Custom Input',
+  value: 'Hi',
+  success: false,
+  error: false,
+};
+
+Success.args = {
+  label: 'Custom Input',
+  value: 'Hi',
+  success: true,
+  error: false,
 };
