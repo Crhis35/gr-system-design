@@ -32,7 +32,7 @@ export default function Stack<C extends ElementType = 'div'>(
     center,
     as,
     component: Wrapper,
-
+    className,
     ...rest
   } = props;
 
@@ -62,6 +62,7 @@ export default function Stack<C extends ElementType = 'div'>(
     width && `w-${width}`,
     height && `h-${height}`,
     center && `items-center justify-center`,
+    className,
   );
 
   return (
