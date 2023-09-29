@@ -8,6 +8,8 @@ import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import tsConfigPaths from 'rollup-plugin-tsconfig-paths';
 
+import postcss from 'rollup-plugin-postcss';
+
 import packageJson from './package.json' assert { type: 'json' };
 
 const moduleName = packageJson.name.replace(/^@.*\//, '');
@@ -48,6 +50,14 @@ export default defineConfig([
       peerDepsExternal(),
       resolve(),
       commonjs(),
+      postcss({
+        config: {
+          path: './postcss.config.js',
+        },
+        extensions: ['.css'],
+        minimize: true,
+        extract: false,
+      }),
       terser(),
     ],
   },
