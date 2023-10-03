@@ -1,11 +1,11 @@
 import React from 'react';
 
-import ListGroup from './ListGroup';
+import ListGroup from './list-group';
 
 import { Meta } from '@storybook/react';
 
 export default {
-  title: 'Atoms/ListGroup/ListGroup',
+  title: 'Atoms/list-group/ListGroup',
   component: ListGroup,
 } as Meta;
 
