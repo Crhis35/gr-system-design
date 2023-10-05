@@ -4,11 +4,11 @@ import clsx from 'clsx';
 
 import { StackProps } from './Buttons.model';
 
-export default function AtomButton<C extends ElementType = 'button'>(
+export default function AtomButton<C extends ElementType = 'div'>(
   props: StackProps<C>,
 ) {
     const {
-      label,
+      bgColor,
       p,
       m,
       px,
@@ -62,7 +62,7 @@ export default function AtomButton<C extends ElementType = 'button'>(
     
     <button type="button"
     
-    className={`text-gray-900 bg-${label} hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2 ${stackClasses}`}
+    className={`text-gray-900 bg-${bgColor} border border-gray-200  font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center mr-2 mb-2 ${stackClasses}`}
       >
       {props.iconLeft}
       <span className="p-1">{props.label}</span>
