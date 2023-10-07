@@ -18,7 +18,12 @@ export type StackProps<C extends React.ElementType> =
 
       label?: string; 
       bgColor?: string; 
+      path?:string;
+      path2?:string;
+      path3?:string;
       txtColor?: string; 
+      onchage?: () => void;
+      onclick?: () => void;
       iconRight?: React.ReactNode;
       iconLeft?: React.ReactNode;
       Social?:string,
