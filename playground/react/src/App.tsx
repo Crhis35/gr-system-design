@@ -8,7 +8,7 @@ function App() {
           <div key={idx} className="h-40 w-40 bg-red-700" />
         ))}
       </Stack>
-      <CheckboxLabel label="hola mundo" errorMessage="hola" error />
+      <CheckboxLabel label="hola mundo" errorMessage="hola" />
     </Stack>
   );
 }
