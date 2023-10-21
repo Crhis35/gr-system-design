@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import {
   SpacingType,
   AlignItemsType,
@@ -7,6 +7,7 @@ import {
   SizeType,
   PolymorphicComponentPropWithRef,
 } from 'lib/types/theme';
+import { variants } from './alert.styles';
 
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
@@ -50,7 +51,41 @@ export type AlertProps<C extends React.ElementType> =
         | 'purple'
         | 'pink'
         | 'bg-teal-600';
-      type: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'purple';
+      variant: keyof typeof variants;
       colorTone?: 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100 | 50;
     }
   >;
+
+export type AlertHeaderProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<
+    C,
+    {
+      title?: ReactNode;
+      icon?: ReactNode;
+      description?: ReactNode;
+    }
+  >;
+
+export type AlertBodyProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<
+    C,
+    {
+      content?: ReactNode;
+    }
+  >;
+
+export type AlertActionsProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<
+    C,
+    {
+      content?: ReactNode;
+    }
+  >;
+
+export type IAlertComponentType<C extends React.ElementType> = ((
+  props: AlertProps<C>,
+) => JSX.Element) & {
+  Header: (props: AlertHeaderProps<C>) => JSX.Element;
+  Body: (props: AlertBodyProps<C>) => JSX.Element;
+  Actions: (props: AlertActionsProps<C>) => JSX.Element;
+};
