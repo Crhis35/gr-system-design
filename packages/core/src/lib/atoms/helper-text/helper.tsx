@@ -1,20 +1,17 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ElementType } from 'react';
 
-import { SelectProps } from './select.model';
+import { HelperTextProps } from './helper.model';
 import clsx from 'clsx';
 
-export default function Select(props: SelectProps) {
+export default function HelperText<C extends ElementType = 'p'>(
+  props: HelperTextProps<C>,
+) {
   const {
-    required = false,
-
-    value = '',
-    onChange,
-
     error,
 
     success,
 
-    name = '',
+    helperText: HelperText,
 
     size = 'small',
 
@@ -27,10 +24,7 @@ export default function Select(props: SelectProps) {
     ml,
     width,
     height,
-    ...rest
   } = props;
-
-  const [inputValue, setInputValue] = useState(value);
 
   const sizeClasses =
     size === 'regular'
@@ -39,12 +33,9 @@ export default function Select(props: SelectProps) {
       ? 'p-4 sm:text-md'
       : 'p-2 sm:text-xs';
 
-  const selectClasses = clsx(
-    'ring-0',
-    'outline-0',
-    'border',
-    'flex',
-    'flex-row',
+  const helperTextClasses = clsx(
+    'focus:ring-0',
+    'focus:outline-0',
 
     !error && !success && 'bg-gray-50',
     !error && !success && 'border-gray-300',
@@ -56,8 +47,8 @@ export default function Select(props: SelectProps) {
     !error && !success && 'dark:border-gray-30',
     !error && !success && 'dark:text-gray-400',
 
-    'rounded-lg',
-    'focus:ring-0',
+    'rounded',
+    // 'focus:ring-0',
     'block',
 
     sizeClasses,
@@ -85,19 +76,9 @@ export default function Select(props: SelectProps) {
     success && 'dark:border-success-500',
   );
 
-  const onChangeInput = (e: ChangeEvent<HTMLSelectElement>) =>
-    setInputValue(e.target.value);
   return (
-    <select
-      name={name}
-      id={name}
-      required={required}
-      value={inputValue}
-      onChange={onChange ? onChange : onChangeInput}
-      className={selectClasses}
-      {...rest}
-    >
-      <option className="h-10 bg-red-500">Choose a option</option>
-    </select>
+    <p className={helperTextClasses}>
+      <HelperText />
+    </p>
   );
 }

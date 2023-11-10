@@ -12,14 +12,10 @@ export default function Textarea(props: TextareaProps) {
     onChange,
 
     error,
-    errorMessage,
 
     success,
 
-    label = '',
     name = '',
-
-    helperText: HelperText,
 
     size = 'small',
 
@@ -62,7 +58,6 @@ export default function Textarea(props: TextareaProps) {
     'rounded-lg',
     'focus:ring-0',
     'block',
-    'w-full',
 
     sizeClasses,
 
@@ -89,57 +84,18 @@ export default function Textarea(props: TextareaProps) {
     success && 'dark:border-success-500',
   );
 
-  const helperTextClasses = clsx(
-    'mt-2 text-sm ',
-
-    !error && !success && 'text-gray-500',
-    !error && !success && 'dark:text-gray-400',
-    error && !success && 'text-error-500',
-    success && !error && 'text-success-500',
-    error && !success && 'dark:text-error-500',
-    success && !error && 'dark:text-success-500',
-  );
-
   const onChangeInput = (e: ChangeEvent<HTMLTextAreaElement>) =>
     setInputValue(e.target.value);
   return (
-    <fieldset>
-      {label && (
-        <label
-          htmlFor={name}
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          {label}
-        </label>
-      )}
-
-      <div className="relative">
-        <textarea
-          name={name}
-          id={name}
-          className={inputClasses}
-          placeholder={placeholder}
-          required={required}
-          value={inputValue}
-          onChange={onChange ? onChange : onChangeInput}
-          {...rest}
-        />
-      </div>
-
-      {HelperText && !errorMessage && (
-        <p id={`${name}-helper-text-explanation`} className={helperTextClasses}>
-          <HelperText />
-        </p>
-      )}
-
-      {error && (
-        <p
-          id={`${name}-error-text`}
-          className="mt-2 text-sm text-error-500 dark:text-red-500"
-        >
-          {errorMessage}
-        </p>
-      )}
-    </fieldset>
+    <textarea
+      name={name}
+      id={name}
+      className={inputClasses}
+      placeholder={placeholder}
+      required={required}
+      value={inputValue}
+      onChange={onChange ? onChange : onChangeInput}
+      {...rest}
+    />
   );
 }

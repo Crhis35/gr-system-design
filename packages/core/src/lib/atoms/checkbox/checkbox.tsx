@@ -13,14 +13,9 @@ export default function Checkbox<C extends ElementType = 'input'>(
     onChange,
 
     error,
-    errorMessage,
-
     success,
 
-    label = '',
     name = '',
-
-    helperText: HelperText,
 
     size = 'small',
 
@@ -47,7 +42,10 @@ export default function Checkbox<C extends ElementType = 'input'>(
 
   const inputClasses = clsx(
     'ring-0',
+    'focus:ring-0',
+
     'outline-0',
+    'focus:outline-0',
 
     !error && !success && 'bg-gray-50',
     !error && !success && 'border-gray-300',
@@ -60,9 +58,8 @@ export default function Checkbox<C extends ElementType = 'input'>(
     !error && !success && 'dark:text-gray-400',
 
     'rounded',
-    'focus:ring-0',
+    'shadow-none',
     'block',
-    'w-full',
 
     sizeClasses,
 
@@ -89,57 +86,20 @@ export default function Checkbox<C extends ElementType = 'input'>(
     success && 'dark:border-success-500',
   );
 
-  const helperTextClasses = clsx(
-    'mt-2 text-sm ',
-
-    !error && !success && 'text-gray-500',
-    !error && !success && 'dark:text-gray-400',
-    error && !success && 'text-error-500',
-    success && !error && 'text-success-500',
-    error && !success && 'dark:text-error-500',
-    success && !error && 'dark:text-success-500',
-  );
-
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>) =>
     setInputValue(e.target.value);
   return (
-    <div className="flex flex-row-reverse gap-4">
-      {label && (
-        <label
-          htmlFor={name}
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          {label}
-        </label>
-      )}
-
-      <div className="relative">
-        <input
-          type="checkbox"
-          name={name}
-          id={name}
-          className={inputClasses}
-          required={required}
-          value={inputValue}
-          onChange={onChange ? onChange : onChangeInput}
-          {...rest}
-        />
-      </div>
-
-      {HelperText && !errorMessage && (
-        <p id="helper-text-explanation" className={helperTextClasses}>
-          <HelperText />
-        </p>
-      )}
-
-      {error && (
-        <p
-          id="helper-text-explanation"
-          className="mt-2 text-sm text-error-500 dark:text-red-500"
-        >
-          {errorMessage}
-        </p>
-      )}
+    <div>
+      <input
+        type="checkbox"
+        name={name}
+        id={name}
+        className={inputClasses}
+        required={required}
+        value={inputValue}
+        onChange={onChange ? onChange : onChangeInput}
+        {...rest}
+      />
     </div>
   );
 }

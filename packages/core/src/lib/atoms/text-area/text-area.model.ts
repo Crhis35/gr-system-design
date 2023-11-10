@@ -10,16 +10,18 @@ type InputSizes = 'small' | 'regular' | 'large';
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
  */
-export type RadioProps<C extends React.ElementType> =
+export type TextareaProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<
     C,
     {
       required?: boolean;
+      placeholder?: string;
 
       value?: string;
-      onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+      onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 
       name?: string;
+
       error?: boolean;
 
       success?: boolean;

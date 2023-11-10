@@ -15,20 +15,14 @@ export type CheckboxProps<C extends React.ElementType> =
     C,
     {
       required?: boolean;
-      placeholder?: string;
 
       value?: string;
       onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 
-      label?: string;
       name?: string;
 
       error?: boolean;
-      errorMessage?: boolean;
-
       success?: boolean;
-
-      helperText: React.ElementType;
 
       size?: InputSizes;
       width?: SizeType;

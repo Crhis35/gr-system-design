@@ -10,11 +10,10 @@ type InputSizes = 'small' | 'regular' | 'large';
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
  */
-export type InputProps<C extends React.ElementType> =
+export type HelperTextProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<
     C,
     {
-      icon?: React.ElementType;
       required?: boolean;
       placeholder?: string;
 

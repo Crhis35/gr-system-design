@@ -10,37 +10,31 @@ type InputSizes = 'small' | 'regular' | 'large';
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
  */
-export type SelectProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<
-    C,
-    {
-      required?: boolean;
-      placeholder?: string;
+export type SelectProps = PolymorphicComponentPropWithRef<
+  'select',
+  {
+    required?: boolean;
 
-      value?: string;
-      onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 
-      label?: string;
-      name?: string;
+    name?: string;
 
-      error?: boolean;
-      errorMessage?: boolean;
+    error?: boolean;
 
-      success?: boolean;
+    success?: boolean;
 
-      helperText: React.ElementType;
+    size?: InputSizes;
+    width?: SizeType;
+    height?: SizeType;
+    center?: boolean;
 
-      size?: InputSizes;
-      width?: SizeType;
-      height?: SizeType;
-      center?: boolean;
-
-      m?: SpacingType;
-      mx?: SpacingType;
-      my?: SpacingType;
-      mr?: SpacingType;
-      mt?: SpacingType;
-      mb?: SpacingType;
-      ml?: SpacingType;
-    }
-  >;
+    m?: SpacingType;
+    mx?: SpacingType;
+    my?: SpacingType;
+    mr?: SpacingType;
+    mt?: SpacingType;
+    mb?: SpacingType;
+    ml?: SpacingType;
+  }
+>;

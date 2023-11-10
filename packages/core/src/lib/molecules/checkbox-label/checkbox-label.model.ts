@@ -10,19 +10,25 @@ type InputSizes = 'small' | 'regular' | 'large';
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
  */
-export type RadioProps<C extends React.ElementType> =
+export type CheckboxProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<
     C,
     {
       required?: boolean;
+      placeholder?: string;
 
       value?: string;
       onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 
+      label?: string;
       name?: string;
+
       error?: boolean;
+      errorMessage?: string;
 
       success?: boolean;
+
+      // helperText: React.ElementType;
 
       size?: InputSizes;
       width?: SizeType;

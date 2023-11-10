@@ -10,19 +10,12 @@ type InputSizes = 'small' | 'regular' | 'large';
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
  */
-export type RadioProps<C extends React.ElementType> =
+export type ErrorMessageProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<
     C,
     {
-      required?: boolean;
-
-      value?: string;
-      onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-
-      name?: string;
-      error?: boolean;
-
-      success?: boolean;
+      error: boolean;
+      message: string;
 
       size?: InputSizes;
       width?: SizeType;
