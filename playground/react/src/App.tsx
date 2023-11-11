@@ -1,4 +1,4 @@
-import { Stack } from '@crhis/growth-system-design';
+import { CheckboxLabel, Stack } from '@crhis/growth-system-design';
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
           <div key={idx} className="h-40 w-40 bg-red-700" />
         ))}
       </Stack>
+      <CheckboxLabel label="hola mundo" errorMessage="hola" />
     </Stack>
   );
 }

@@ -5,6 +5,7 @@ export type FlexDirectionType = Property.FlexDirection;
 export type AlignItemsType = Property.AlignItems;
 export type JustifyContentType = Property.JustifyContent;
 export type SizeType = number | 'full' | 'screen' | 'max' | 'min' | 'fit';
+export type InputSizes = 'small' | 'regular' | 'large';
 
 type AsProp<C extends React.ElementType> = {
   as?: C;
