@@ -1,39 +1,40 @@
 import React from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 
-import Textarea from './select';
-import { TextareaProps } from './select.model';
+import Select from './select';
+import { SelectProps } from './select.model';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Atoms/Textarea',
-  component: Textarea,
+  title: 'Atoms/Select',
+  component: Select,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    spacing: {
-      description: 'Select Based on The Following Options',
-      control: 'number',
-    },
     as: {
       description: 'Component to be wrapped by the component',
     },
     children: {
       description: 'Children component',
     },
+    label: {
+      description: 'Label to be wrapped by the component',
+    },
   },
-} satisfies Meta<typeof Textarea>;
+} satisfies Meta<typeof Select>;
 
 export default meta;
 
-const Template: StoryFn<TextareaProps> = args => <Textarea {...args} />;
+const Template: StoryFn<SelectProps<string>> = args => <Select {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  as: 'div',
-  width: 100,
-  justifyContent: 'space-between',
-  direction: 'column',
+  width: 'full',
+  label: '',
   height: 40,
+  options: [
+    { label: 'Option 1', value: 'Option 1' },
+    { label: 'Option 2', value: 'Option 2' },
+  ],
 };

@@ -8,10 +8,10 @@ export default function Stack<C extends ElementType = 'div'>(
   props: StackProps<C>,
 ) {
   const {
-    spacing = '4',
-    align = 'flex-start',
-    justifyContent = 'flex-start',
-    direction = 'column',
+    spacing,
+    align,
+    justifyContent,
+    direction,
     children,
     p,
     m,
@@ -40,9 +40,13 @@ export default function Stack<C extends ElementType = 'div'>(
 
   const stackClasses = clsx(
     'flex',
-    `space-${direction === 'row' ? 'x' : 'y'}-${spacing}`,
+    'w-full',
+    'flex-start',
+    'justify-between',
+    'space-x-4',
+    spacing && `space-${direction === 'row' ? 'x' : 'y'}-${spacing}`,
     align && `items-${String(align).replace('flex-', '')}`,
-    `flex-${direction.replace('column', 'col')}`,
+    direction ? `flex-${direction.replace('column', 'col')}` : 'flex-row	',
     justifyContent &&
       `justify-${justifyContent.replace('space-', '').replace('flex-', '')}`,
     p && `p-${p}`,

@@ -2,21 +2,39 @@ import React from 'react';
 import {
   SpacingType,
   SizeType,
+  InputSizes,
   PolymorphicComponentPropWithRef,
 } from 'lib/types/theme';
-
-type InputSizes = 'small' | 'regular' | 'large';
+import { ActionMeta, MultiValue, SingleValue } from 'react-select';
+import { getVariants } from './select.style';
 
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
  */
-export type SelectProps = PolymorphicComponentPropWithRef<
+
+export interface SelectItemOption<T> {
+  label: string;
+  value: T;
+}
+
+export type SelectItemValue<T> =
+  | SingleValue<SelectItemOption<T>>
+  | MultiValue<SelectItemOption<T>>;
+
+export type SelectVariants<T> = keyof ReturnType<typeof getVariants<T>>;
+
+export type SelectProps<T> = PolymorphicComponentPropWithRef<
   'select',
   {
     required?: boolean;
-
-    value?: string;
-    onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    variant?: SelectVariants<T>;
+    label?: React.ReactNode;
+    value: SelectItemValue<T>;
+    options: SelectItemOption<T>[];
+    onChange?: (
+      newValue: SelectItemValue<T>,
+      actionMeta: ActionMeta<SelectItemOption<T>>,
+    ) => void;
 
     name?: string;
 

@@ -1,15 +1,20 @@
-import React, { ChangeEvent, useState } from 'react';
+import React from 'react';
 
-import { SelectProps } from './select.model';
 import clsx from 'clsx';
+import ReactSelect, { ActionMeta } from 'react-select';
 
-export default function Select(props: SelectProps) {
+import { SelectItemOption, SelectItemValue, SelectProps } from './select.model';
+import { getVariants } from './select.style';
+
+export default function Select<T>(props: SelectProps<T>) {
   const {
     required = false,
 
-    value = '',
+    value,
     onChange,
-
+    options,
+    label,
+    variant = 'primary',
     error,
 
     success,
@@ -27,10 +32,9 @@ export default function Select(props: SelectProps) {
     ml,
     width,
     height,
-    ...rest
   } = props;
 
-  const [inputValue, setInputValue] = useState(value);
+  const [inputValue, setInputValue] = React.useState<SelectItemValue<T>>(value);
 
   const sizeClasses =
     size === 'regular'
@@ -69,7 +73,7 @@ export default function Select(props: SelectProps) {
     mt && `mt-${mt}`,
     mb && `mb-${mb}`,
     ml && `ml-${ml}`,
-    width && `w-${width}`,
+    width === 'full' ? 'w-full' : `w-${width}`,
     height && `h-${height}`,
 
     error && 'bg-error-50',
@@ -85,19 +89,37 @@ export default function Select(props: SelectProps) {
     success && 'dark:border-success-500',
   );
 
-  const onChangeInput = (e: ChangeEvent<HTMLSelectElement>) =>
-    setInputValue(e.target.value);
+  const onChangeInput = (
+    newValue: SelectItemValue<T>,
+    actionMeta: ActionMeta<SelectItemOption<T>>,
+  ) => {
+    setInputValue(newValue);
+
+    onChange?.(newValue, actionMeta);
+  };
   return (
-    <select
-      name={name}
-      id={name}
-      required={required}
-      value={inputValue}
-      onChange={onChange ? onChange : onChangeInput}
-      className={selectClasses}
-      {...rest}
-    >
-      <option className="h-10 bg-red-500">Choose a option</option>
-    </select>
+    <fieldset>
+      {label && (
+        <label
+          htmlFor={name}
+          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >
+          {label}
+        </label>
+      )}
+
+      <div className="relative">
+        <ReactSelect
+          id={name}
+          name={name}
+          required={required}
+          value={inputValue}
+          onChange={onChangeInput}
+          className={selectClasses}
+          options={options}
+          styles={getVariants<T>()[variant]}
+        />
+      </div>
+    </fieldset>
   );
 }

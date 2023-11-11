@@ -28,7 +28,7 @@ const meta = {
 
 export default meta;
 
-const Template: StoryFn<StackProps> = args => (
+const Template: StoryFn<StackProps<'div'>> = args => (
   <Stack {...args}>
     {Array.from({ length: 12 }).map((_, index) => (
       <div key={index}>
