@@ -42,7 +42,7 @@ export default function Stack<C extends ElementType = 'div'>(
     'flex',
     width ? `w-${width}` : 'w-auto',
     height ? `h-${height}` : 'h-auto',
-    spacing ? `gap-${direction === 'row' ? 'x' : 'y'}-${spacing}` : 'gap-x-4',
+    spacing || Number(spacing) > -1 ? `gap-${spacing}` : 'gap-4',
     align ? `items-${String(align).replace('flex-', '')}` : 'items-start',
     direction ? `flex-${direction.replace('column', 'col')}` : 'flex-row',
     justifyContent
