@@ -40,15 +40,16 @@ export default function Stack<C extends ElementType = 'div'>(
 
   const stackClasses = clsx(
     'flex',
-    'w-full',
-    'flex-start',
-    'justify-between',
-    'space-x-4',
-    spacing && `space-${direction === 'row' ? 'x' : 'y'}-${spacing}`,
-    align && `items-${String(align).replace('flex-', '')}`,
-    direction ? `flex-${direction.replace('column', 'col')}` : 'flex-row	',
-    justifyContent &&
-      `justify-${justifyContent.replace('space-', '').replace('flex-', '')}`,
+    width ? `w-${width}` : 'w-auto',
+    height ? `h-${height}` : 'h-auto',
+    spacing
+      ? `space-${direction === 'row' ? 'x' : 'y'}-${spacing}`
+      : 'space-x-4',
+    align ? `items-${String(align).replace('flex-', '')}` : 'items-start',
+    direction ? `flex-${direction.replace('column', 'col')}` : 'flex-row',
+    justifyContent
+      ? `justify-${justifyContent.replace('space-', '').replace('flex-', '')}`
+      : 'justify-between',
     p && `p-${p}`,
     m && `m-${m}`,
     px && `px-${px}`,
@@ -63,8 +64,6 @@ export default function Stack<C extends ElementType = 'div'>(
     mt && `mt-${mt}`,
     mb && `mb-${mb}`,
     ml && `ml-${ml}`,
-    width && `w-${width}`,
-    height && `h-${height}`,
     center && `items-center justify-center`,
     className,
   );
