@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.19](https://github.com/Crhis35/gr-system-design/compare/@crhis/growth-system-design@0.0.18...@crhis/growth-system-design@0.0.19) (2023-11-13)
+
+### Bug Fixes
+
+- **stack:** fixed stack gap ([8282656](https://github.com/Crhis35/gr-system-design/commit/82826566e43dd0155f58a83c597d23cad03a31ab))
+
 ## [0.0.18](https://github.com/Crhis35/gr-system-design/compare/@crhis/growth-system-design@0.0.17...@crhis/growth-system-design@0.0.18) (2023-11-13)
 
 ### Bug Fixes
