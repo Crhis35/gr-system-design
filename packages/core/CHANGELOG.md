@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.16](https://github.com/Crhis35/gr-system-design/compare/@crhis/growth-system-design@0.0.15...@crhis/growth-system-design@0.0.16) (2023-11-13)
+
+**Note:** Version bump only for package @crhis/growth-system-design
+
 ## [0.0.15](https://github.com/Crhis35/gr-system-design/compare/@crhis/growth-system-design@0.0.14...@crhis/growth-system-design@0.0.15) (2023-09-29)
 
 ### Bug Fixes
