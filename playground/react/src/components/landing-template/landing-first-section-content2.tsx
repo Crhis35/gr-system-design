@@ -9,7 +9,10 @@ import IvanProfilePic from '../../assets/lading-images/EllipseManuelRestrepo.png
 
 function LandingFirstSectionContent2() {
   return (
-    <div className={clsx(content2.mainContainer)}>
+    <div
+      style={{ borderLeft: '1px solid', borderRight: '1px solid' }}
+      className={clsx(content2.mainContainer)}
+    >
       <div className={clsx(content2.textContainer)}>
         <h2 className={clsx(content2.title)}>
           Convertimos tus leads en clientes listos para comprar.

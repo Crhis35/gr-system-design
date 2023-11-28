@@ -39,7 +39,8 @@ export const variants = {
 export const content2 = {
   // CONTAINERS --
 
-  mainContainer: 'flex bg-F9FAF8 justify-around items-center pt-39 mt-5',
+  mainContainer:
+    'flex bg-F9FAF8 mb-0 justify-around items-center pt-10  bg-white',
 
   textContainer: 'flex flex-col w-550 h-230 gap-15',
 
@@ -99,4 +100,32 @@ export const landingStatisticsStyles = {
 
   itemListContainer:
     'border-b border-gray-300 gap-14 flex flex-row mb-1 pb-2 bg-white',
+};
+
+export const landingSecondSection = {
+  // -- DEMO --
+  demoContainer:
+    'flex flex-col gap-16 mt-0 w-screen max-w-screen-2xl h-600 p-10 justify-center items-center content-center gap-10 flex-shrink-0 flex-wrap bg-identitySecondarygray-1 text-white',
+  demoTitle: 'text-white text-center font-inter text-4xl font-bold w-1100',
+  demoTitlesContainer: 'w-850',
+  demoSubTitle: 'text-white text-center justify-center mt-5',
+  demoButton: 'rounded-lg border p-4 border-white',
+  demoButtonContainer: 'flex flex-row gap-12',
+  demoButtonPrimary: ' rounded-lg text-black bg-primary-0 p-4 w-150',
+  // PAYMENTS  ---
+  paymentsContainer:
+    ' flex flex-col w-screen max-w-screen-2xl bg-identitySecondarygray-0 h-1440 p-36   text-white',
+  paymentsInfoContainer: 'flex flex-col gap-10 p-16 ',
+  paymentsInfoTitle:
+    'justify-center text-4xl items-center gap-10 text-white text-center font-inter text-2xl font-extrabold leading-125 tracking-tighter',
+  paymentsSubInfoTitle: 'text-2xl text-center',
+
+  paymentsPlansContainer: 'flex flex-row',
+  // CONTACT --
+  contactFormContainer:
+    'bg-identitySecondarygray-2 h-800 w-screen max-w-screen-2xl',
+  landingStepsContainer:
+    'bg-identitySecondarygray-0 h-800 w-screen max-w-screen-2xl',
+  FAQcontainer: 'bg-black h-1640 w-screen max-w-screen-2xl',
+  footer: 'bg-identitySecondarygray-0 h-400 w-screen max-w-screen-2xl',
 };

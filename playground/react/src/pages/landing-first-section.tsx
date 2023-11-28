@@ -32,9 +32,8 @@ function LandingFirstSection() {
       <div className={clsx(variants.landingFirstSectionGray)}>
         <LandingFirstSectionFeatures />
       </div>
-      <div>
-        <LandingFirstSectionContent2 />
-      </div>
+
+      <LandingFirstSectionContent2 />
     </div>
   );
 }

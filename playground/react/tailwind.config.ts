@@ -9,8 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          0: '#59E0E2',
+        },
         identitySecondarygray: {
           0: '#262930',
+          1: '#151919',
+          2: '#131D27',
+          3: '#18181B',
         },
         landingPagecontentFeaturesColors: {
           white: '#FFFFF5',
@@ -29,11 +35,18 @@ const config: Config = {
         '200': '200px',
         '140': '140px',
         '27': '27px',
+        '600': '600px',
+        '800': '800px',
+        '1440': '1440px',
+        '1640': '1640px',
+        '400': '400px',
       },
       width: {
+        '1440': '1440px',
         '1200': '1200px',
         '680': '680px',
         '800': '800px',
+        '850': '850px',
         '700': '700px',
         '296': '296px',
         '1000': '1000px',
@@ -41,6 +54,7 @@ const config: Config = {
         '350': '350px',
         '320': '320px',
         '250': '250px',
+        '150': '150px',
       },
       gap: {
         '120': '120px',
