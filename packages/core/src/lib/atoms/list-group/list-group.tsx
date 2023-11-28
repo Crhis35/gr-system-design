@@ -1,24 +1,16 @@
 import React, { ElementType } from 'react';
 import clsx from 'clsx';
 import { ListGroupProps } from './list-group.model';
+import { listGroupStyles } from './list-group.styles';
 
 export default function ListGroup<C extends ElementType = 'div'>(
   props: ListGroupProps<C>,
 ) {
   const { icons, items } = props;
 
-  const elementClasses = {
-    div: 'w-48 text-white-200 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 bg-red-500 dark:border-gray-600 dark:text-white',
-    button:
-      'relative inline-flex items-center w-full px-4 py-2 text-sm font-medium border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white',
-  };
-
-  const listGroupContainer = clsx(elementClasses.div);
-  const listGroupButton = clsx(elementClasses.button);
-
   if (icons === true) {
     return (
-      <div className={listGroupContainer}>
+      <div className={clsx(listGroupStyles.listGroupContainer)}>
         <button
           type="button"
           className="relative inline-flex items-center w-full px-4 py-2 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
@@ -41,7 +33,7 @@ export default function ListGroup<C extends ElementType = 'div'>(
           </svg>
           Profile
         </button>
-        <button type="button" className={listGroupButton}>
+        <button type="button" className={clsx(listGroupStyles.listGroupButton)}>
           <svg
             className="w-3 h-3 mr-2.5"
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +49,7 @@ export default function ListGroup<C extends ElementType = 'div'>(
           </svg>
           Settings
         </button>
-        <button type="button" className={listGroupButton}>
+        <button type="button" className={clsx(listGroupStyles.listGroupButton)}>
           <svg
             className="w-3 h-3 mr-2.5"
             xmlns="http://www.w3.org/2000/svg"
@@ -102,9 +94,13 @@ export default function ListGroup<C extends ElementType = 'div'>(
 
   if (icons === false) {
     return (
-      <div className={listGroupContainer}>
+      <div className={clsx(listGroupStyles.listGroupContainer)}>
         {items.map((item: string, index: number) => (
-          <button key={index} type="button" className={listGroupButton}>
+          <button
+            key={index}
+            type="button"
+            className={clsx(listGroupStyles.listGroupButton)}
+          >
             {item}
           </button>
         ))}

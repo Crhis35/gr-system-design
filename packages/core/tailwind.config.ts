@@ -169,7 +169,7 @@ const config: Config = {
           900: '#751A3D',
         },
 
-        // -- VISUAL IDENTITY PALLETTE --
+        // -- VISUAL IDENTITY PALETTE --
 
         // Main Colors
 
@@ -184,7 +184,7 @@ const config: Config = {
           80: '#122D2D',
         },
         // Secondary
-        identitySecondaryary: {
+        identitySecondarygray: {
           0: '#262930',
           10: '#43474C',
           20: '#606567',
@@ -212,7 +212,7 @@ const config: Config = {
           light: '#FFB4B4',
         },
 
-        // -- FEEDBACK PALLETTE --
+        // -- FEEDBACK PALETTE --
 
         // Succes
         success: {
@@ -233,7 +233,7 @@ const config: Config = {
           dark: '#71C9C1',
         },
 
-        // -- BACKGROUNDS PALLETTE --
+        // -- BACKGROUNDS PALETTE --
 
         primaryBG: '#3E9D9E',
         secondaryBG: '#282828',
