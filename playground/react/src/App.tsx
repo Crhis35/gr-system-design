@@ -1,3 +1,4 @@
+import React from 'react'
 import { CheckboxLabel, Stack } from '@crhis/growth-system-design';
 
 function App() {
