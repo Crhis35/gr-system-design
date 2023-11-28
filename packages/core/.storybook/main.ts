@@ -1,21 +1,18 @@
-import type { StorybookConfig } from '@storybook/react-vite';
-
 import { join, dirname } from 'path';
+import type { StorybookConfig } from '@storybook/react-vite';
+import postcss from '@vitejs/plugin-postcss';
 
-/**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
- */
 function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, 'package.json')));
 }
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-styling',
+    // Remove '@storybook/addon-styling' if it conflicts with Tailwind CSS
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -33,5 +30,13 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  viteFinal: async (config, { configType }) => {
+    // Add PostCSS plugin with Tailwind CSS
+    config.plugins.push(postcss());
+
+    // Return the altered config
+    return config;
+  },
 };
+
 export default config;
