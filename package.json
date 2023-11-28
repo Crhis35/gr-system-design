@@ -17,15 +17,16 @@
     "clean": "lerna run clean",
     "publish:prod": "lerna publish from-package --contents dist --force-publish",
     "format:fix": "prettier --write ./packages",
-    "lint": "eslint ./packages --ext .js,.jsx,.ts,.tsx --fix"
+    "lint": "eslint ./packages --ext .js,.jsx,.ts,.tsx --fix",
+    "storybook": "start-storybook -p 6006"
   },
-  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
     "commitizen": "^4.3.0",
+    "@storybook/react": "^7.4.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.50.0",
     "husky": "^8.0.3",

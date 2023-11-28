@@ -27,6 +27,7 @@
     "build:lib": "rm -rf ./lib/ && yarn build:lib:esm && yarn build:lib:cjs"
   },
   "dependencies": {
+    "@storybook/addon-actions": "^7.3.2",
     "clsx": "^2.0.0",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.6.1",
