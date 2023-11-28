@@ -59,7 +59,7 @@ export default function Indicator<C extends ElementType = 'span'>(
     width && `w-${width}`,
     height && `h-${height}`,
     center && `items-center justify-center`,
-    color && `bg-${color}`,
+    color && `bg-${color}-${colorTone}`,
     type === 'default' &&
       'items-center justify-center bg-red-500 w-6 h-6 text-xs font-bold text-white  rounded-full',
     type === 'icon' &&
@@ -67,10 +67,7 @@ export default function Indicator<C extends ElementType = 'span'>(
   );
   if (type === 'default') {
     return (
-      <span
-        style={{ backgroundColor: '#F05252' }}
-        className={clsx(indicatorClasses, 'dark:bg-red-500')}
-      >
+      <span className={clsx(indicatorClasses, 'dark:bg-red-500')}>
         {text || ' '}
       </span>
     );
@@ -99,7 +96,7 @@ export default function Indicator<C extends ElementType = 'span'>(
 
   if (type === 'badgeAvailable') {
     return (
-      <span className="  gap-1 p-2 inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+      <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
         <span className="w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
         Indicator text
       </span>
@@ -108,11 +105,8 @@ export default function Indicator<C extends ElementType = 'span'>(
 
   if (type === 'badgeUnavailable') {
     return (
-      <span className="inline-flex gap-1 p-2 items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-        <span
-          style={{ backgroundColor: '#F05252' }}
-          className="w-2 h-2 mr-1 bg-red-500 rounded-full"
-        ></span>
+      <span className="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+        <span className="w-2 h-2 mr-1 bg-red-500 rounded-full"></span>
         Indicator text
       </span>
     );
@@ -120,12 +114,9 @@ export default function Indicator<C extends ElementType = 'span'>(
 
   if (type === 'legend') {
     return (
-      <span
-        className={`inline-flex gap-1 p-2 items-center dark:text-white  text-xs font-medium rounded-full `}
-      >
+      <span className="inline-flex items-center dark:text-white  text-xs font-medium rounded-full ">
         <span
-          style={{ backgroundColor: `${color}` }}
-          className={`w-2 h-2 mr-1p-2  dark:bg-${color}-${colorTone}  rounded-md`}
+          className={`w-2 h-2 mr-1 bg-${color}-${colorTone} dark:bg-${color}-${colorTone}  rounded-full`}
         ></span>
         Indicator text
       </span>
@@ -135,11 +126,8 @@ export default function Indicator<C extends ElementType = 'span'>(
   if (type === 'stepper') {
     return (
       <div className="flex items-center">
-        <div
-          style={{ backgroundColor: '#C3DDFD' }}
-          className="z-10 flex items-center justify-center w-6 h-6 bg-[#C3DDFD] rounded-full  dark:bg-primary-900"
-        >
-          <span className="flex w-3 h-3 dark:bg-teal-500 bg-teal-600 rounded-full"></span>
+        <div className="z-10 flex items-center justify-center w-6 h-6 bg-primary-200 rounded-full  dark:bg-primary-900">
+          <span className="flex w-3 h-3 dark:bg-teal-600 bg-teal-600 rounded-full"></span>
         </div>
       </div>
     );

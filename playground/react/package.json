@@ -9,6 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "@crhis/growth-system-design": "^0.0.11",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.5.0",
     "react": "^18.2.0",

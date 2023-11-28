@@ -11,7 +11,7 @@ import {
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
  */
-export type IndicatorProps<C extends React.ElementType> =
+export type ListGroupProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<
     C,
     {
@@ -37,28 +37,7 @@ export type IndicatorProps<C extends React.ElementType> =
       mb?: SpacingType;
       ml?: SpacingType;
       text?: string;
-      color?:
-        | 'primary'
-        | 'gray'
-        | 'blue'
-        | 'red'
-        | 'orange'
-        | 'yellow'
-        | 'green'
-        | 'teal'
-        | 'indigo'
-        | 'purple'
-        | 'pink'
-        | 'bg-teal-600';
-      type:
-        | 'default'
-        | 'icon'
-        | 'badge'
-        | 'stepper'
-        | 'legend'
-        | 'dark:red'
-        | 'badgeAvailable'
-        | 'badgeUnavailable';
-      colorTone?: 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100 | 50;
+      items: [string, string, string, string];
+      icons: boolean;
     }
   >;
