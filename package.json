@@ -21,18 +21,18 @@
     "storybook": "start-storybook -p 6006"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.2",
-    "@commitlint/config-conventional": "^17.7.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.3",
-    "@typescript-eslint/parser": "^6.7.3",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
     "commitizen": "^4.3.0",
-    "@storybook/react": "^7.4.0",
+    "@storybook/react": "^7.6.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.50.0",
+    "eslint": "^8.54.0",
     "husky": "^8.0.3",
-    "lerna": "^7.3.0",
-    "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3"
+    "lerna": "^8.0.0",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.0"
   },
   "config": {
     "commitizen": {

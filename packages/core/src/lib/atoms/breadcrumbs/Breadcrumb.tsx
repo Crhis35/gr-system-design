@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ElementType } from 'react';
 import { BreadcrumbProps } from './breadcrumb.model';
 
 export default function Breadcrumb<C extends ElementType = 'div'>(
