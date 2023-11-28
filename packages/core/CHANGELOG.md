@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/Crhis35/gr-system-design/compare/@crhis/growth-system-design@0.0.19...@crhis/growth-system-design@0.1.0) (2023-11-28)
+
+### Features
+
+- **alert:** added alerts ([a982a0c](https://github.com/Crhis35/gr-system-design/commit/a982a0c3b60defe6edf5dc640c0b583c8a08ec2c))
+
 ## [0.0.19](https://github.com/Crhis35/gr-system-design/compare/@crhis/growth-system-design@0.0.18...@crhis/growth-system-design@0.0.19) (2023-11-13)
 
 ### Bug Fixes
