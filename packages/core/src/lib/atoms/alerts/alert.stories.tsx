@@ -17,7 +17,7 @@ export const RedAlert = () => (
 );
 
 export const PrimaryAlert = () => (
-  <Alert type={'primary'} color={'red'} text={''} colorTone={500} />
+  <Alert type={'primary'} color={'bg-teal-600'} text={''} colorTone={500} />
 );
 export const YellowAlert = () => (
   <Alert type={'yellow'} color={'gray'} text={''} colorTone={200} />

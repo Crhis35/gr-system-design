@@ -11,7 +11,7 @@ import {
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
  */
-export type IndicatorProps<C extends React.ElementType> =
+export type AccordionProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<
     C,
     {
@@ -37,7 +37,5 @@ export type IndicatorProps<C extends React.ElementType> =
       mb?: SpacingType;
       ml?: SpacingType;
       text?: string;
-      color: string;
-      type: string;
     }
   >;
