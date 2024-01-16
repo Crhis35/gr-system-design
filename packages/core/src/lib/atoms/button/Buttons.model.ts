@@ -7,6 +7,7 @@ import {
   SizeType,
   PolymorphicComponentPropWithRef,
 } from '../../types/theme';
+import { Variants } from './button.styles';
 
 /**
  * This is the updated component props using PolymorphicComponentPropWithRef
@@ -15,18 +16,18 @@ export type StackProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<
     C,
     {
-
-      label?: string; 
-      bgColor?: string; 
-      path?:string;
-      path2?:string;
-      path3?:string;
-      txtColor?: string; 
+      variant: Variants;
+      label?: string;
+      bgColor?: string;
+      path?: string;
+      path2?: string;
+      path3?: string;
+      txtColor?: string;
       onchage?: () => void;
       onclick?: () => void;
       iconRight?: React.ReactNode;
       iconLeft?: React.ReactNode;
-      Social?:string,
+      Social?: string;
       component?: React.ElementType;
       spacing?: SpacingType;
       align?: AlignItemsType;

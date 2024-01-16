@@ -3,12 +3,14 @@ import React, { ElementType } from 'react';
 import clsx from 'clsx';
 
 import { StackProps } from './Buttons.model';
+import { variants } from './button.styles';
 
-export default function AtomButton<C extends ElementType = 'div'>(
+export default function Button<C extends ElementType = 'div'>(
   props: StackProps<C>,
 ) {
   const {
     bgColor,
+    variant,
     p,
     m,
     px,
@@ -50,6 +52,8 @@ export default function AtomButton<C extends ElementType = 'div'>(
     width && `w-${width}`,
     height && `h-${height}`,
     center && `items-center justify-center`,
+    bgColor && `bg-${bgColor}`,
+    variant && variants[variant],
   );
 
   return (
@@ -57,7 +61,7 @@ export default function AtomButton<C extends ElementType = 'div'>(
       type="button"
       onClick={props.onclick}
       onChange={props.onchage}
-      className={`text-gray-900 bg-${bgColor} border border-gray-200  font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center mr-2 mb-2 ${stackClasses}`}
+      className={`${stackClasses} `}
     >
       {props.iconLeft}
       <span className="p-1">{props.label}</span>
