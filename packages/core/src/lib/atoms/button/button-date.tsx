@@ -1,5 +1,5 @@
 import React, { ElementType } from 'react';
-import { StackProps } from './Buttons.model';
+import { StackProps } from './buttons.model';
 
 export default function ButtonDate<C extends ElementType = 'div'>(
   props: StackProps<C>,

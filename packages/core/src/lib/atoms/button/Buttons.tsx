@@ -2,7 +2,7 @@ import React, { ElementType } from 'react';
 
 import clsx from 'clsx';
 
-import { StackProps } from './Buttons.model';
+import { StackProps } from './buttons.model';
 import { variants } from './button.styles';
 
 export default function Button<C extends ElementType = 'div'>(
